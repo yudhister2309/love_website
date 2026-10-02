@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One More Chance ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a4508b);
+            overflow-x: hidden;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 550px;
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            animation: appear 1.2s ease;
+        }
+
+        .heart {
+            font-size: 75px;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        h1 {
+            margin: 15px 0;
+            font-size: 32px;
+        }
+
+        .message {
+            line-height: 1.8;
+            font-size: 17px;
+            margin: 25px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            padding: 14px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: white;
+            color: #e91e63;
+        }
+
+        .time {
+            background: rgba(255,255,255,0.18);
+            color: white;
+            border: 1px solid white;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 25px;
+            animation: floatUp 5s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>One More Chance? 🥺</h1>
+
+        <div class="message">
+            <p>I know I made a mistake. 😔</p>
+
+            <p>
+                I understand that my actions hurt you,
+                and I am truly sorry. 💔
+            </p>
+
+            <p>
+                I'm not here to make excuses.
+                I accept my mistake.
+            </p>
+
+            <p>
+                You are very special to me. ❤️
+            </p>
+
+            <p>
+                I don't want to force you or pressure you.
+            </p>
+
+            <p>
+                I only want a chance to rebuild your trust,
+                slowly and honestly.
+            </p>
+
+            <p>
+                I want to prove my feelings through my actions,
+                not just through words. 🥺❤️
+            </p>
+
+            <p>
+                Can we try again,
+                slowly and together? 🌹
+            </p>
+        </div>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="giveChance()">
+                ❤️ Give Me One More Chance
+            </button>
+
+            <button class="time" onclick="needTime()">
+                🥺 I Need Some Time
+            </button>
+
+        </div>
+
+        <div id="result"></div>
+
+    </div>
+
+
+    <script>
+
+        function createHearts() {
+
+            for (let i = 0; i < 25; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "floating-heart";
+
+                heart.innerHTML =
+                    ["❤️", "💗", "💕", "💖", "💓"]
+                    [Math.floor(Math.random() * 5)];
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (3 + Math.random() * 3) + "s";
+
+                heart.style.fontSize =
+                    (18 + Math.random() * 25) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }
+        }
+
+
+        function giveChance() {
+
+            createHearts();
+
+            const result = document.getElementById("result");
+
+            result.style.display = "block";
+
+            result.innerHTML = `
+                ❤️🥺❤️<br><br>
+
+                Thank you for giving us another chance. 💗
+
+                <br><br>
+
+                I promise I won't take your trust for granted.
+
+                <br><br>
+
+                I will listen to you,
+                respect you,
+                understand you,
+                and show my love through my actions. ❤️
+
+                <br><br>
+
+                Let's take it slowly...
+                one day at a time. 🌹
+
+                <br><br>
+
+                <strong>
+                    No more empty promises.
+                    Only genuine efforts. ❤️
+                </strong>
+            `;
+
+            document.querySelector(".yes").style.display = "none";
+            document.querySelector(".time").style.display = "none";
+        }
+
+
+        function needTime() {
+
+            const result = document.getElementById("result");
+
+            result.style.display = "block";
+
+            result.innerHTML = `
+                🥺❤️<br><br>
+
+                I understand.
+
+                <br><br>
+
+                Take all the time you need.
+                I won't pressure you.
+
+                <br><br>
+
+                I'll respect your feelings and your decision.
+
+                <br><br>
+
+                Whenever you're ready,
+                I'll be here. ❤️
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
